@@ -7,9 +7,9 @@ if(true){
         while (montoTotal<2000){
             alert("el monto debe ser de al menos $2000")
             confirm("¿desea ingresar otro monto?")
-            if (confirm=true){
-                calcular()
-            }
+        if (confirm=true){
+            calcular()
+        }
         }
         cuotas=parseInt(prompt("ingrese cantidad de cuotas deseadas"));
         let resultado= montoTotal / cuotas;
