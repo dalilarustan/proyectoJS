@@ -12,6 +12,8 @@ let producto6 = new Producto ("musculosaa estampada",9500,10)
 
 let lista=[producto1,producto2,producto3,producto4,producto5,producto6]
 
+let boton = document.getElementById("boton")
+
 function filtrarProductos(){
     let palabraClave= prompt("ingrese el producto que desea buscar").toLowerCase()
     let resultado = lista.filter((x)=>x.nombre.toLowerCase().includes(palabraClave))
@@ -22,4 +24,4 @@ function filtrarProductos(){
     }
 }
 
-filtrarProductos()
+boton.addEventListener("click",filtrarProductos)
