@@ -22,9 +22,9 @@ function filtrarProductos(){
     const body = document.querySelector("body")
     const  input = document.getElementById("filtrar").value
     const palabraClave = input.trim().toLowerCase()
-    const resultado = lista.filter((producto)=>producto.nombre.toLowerCase().include(palabraClave))
+    const resultado = lista.filter((producto)=>producto.nombre.toLowerCase().includes(palabraClave))
 
-    if (resultado>0){
+    if (resultado.length>0){
 
         const container = document.createElement("div")
 
@@ -36,15 +36,23 @@ function filtrarProductos(){
         card.appendChild(nombre)
 
         const precio = document.createElement("p")
-        precio.textContent = producto.precio
+        precio.textContent = `tiene un valor de $ ${producto.precio}`
         card.appendChild(precio)
 
         const stock = document.createElement("p")
-        stock.textContent = producto.stock
+        stock.textContent = `quedan en stock: ${producto.stock}`
         card.appendChild(stock)
 
+        container.appendChild(card)
 
 
         } )
+        body.appendChild(container)
+    }else{
+        alert("no se encotró el producto "+palabraClave)
     }
 }
+
+
+const boton = document.getElementById("boton")
+boton.addEventListener("click",filtrarProductos)
