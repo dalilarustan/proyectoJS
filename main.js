@@ -27,6 +27,7 @@ function filtrarProductos(){
     if (resultado.length>0){
 
         const container = document.createElement("div")
+        container.classList.add("container")
 
         resultado.forEach((producto)=>{
             const card = document.createElement("div")
@@ -55,4 +56,5 @@ function filtrarProductos(){
 
 
 const boton = document.getElementById("boton")
+boton.classList.add("button")
 boton.addEventListener("click",filtrarProductos)
