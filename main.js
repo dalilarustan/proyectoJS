@@ -52,6 +52,7 @@ function filtrarProductos(){
     }else{
         alert("no se encotró el producto "+palabraClave)
     }
+    localStorage.setItem("productos", JSON.stringify(lista))
 }
 
 
