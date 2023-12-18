@@ -4,19 +4,19 @@ const Producto = function (nombre,precio,stock,imagen){
     this.stock=stock
     this.imagen=imagen
 }
-let producto1 = new Producto ("pollera corta",16000,6,"/fotosJS/polleracorta.jpg")
-let producto2 = new Producto ("camisa",12000,9,"/fotosJS/camisa.jpg")
-let producto3 = new Producto ("musculosa lisa",9200,12,"/fotosJS/musculosa.jpg")
-let producto4 = new Producto ("pantalon",17000,8,"/fotosJS/pantalon.jpg")
-let producto5 = new Producto ("pollera larga",16900,5,"/fotosJS/polleralarga.jpg")
-let producto6 = new Producto ("musculosaa estampada",9500,10,"/fotosJS/musculosaestampada.jpg")
+let producto1 = new Producto ("pollera corta",16000,6,"fotosJS/polleracorta.jpg")
+let producto2 = new Producto ("camisa",12000,9,"fotosJS/camisa.jpg")
+let producto3 = new Producto ("musculosa lisa",9200,12,"fotosJS/musculosa.jpg")
+let producto4 = new Producto ("pantalon",17000,8,"fotosJS/pantalon.jpg")
+let producto5 = new Producto ("pollera larga",16900,5,"fotosJS/polleralarga.jpg")
+let producto6 = new Producto ("musculosaa estampada",9500,10,"fotosJS/musculosaestampada.jpg")
 
 let lista=[producto1,producto2,producto3,producto4,producto5,producto6]
 
 if (localStorage.getItem("productos")){
     lista = JSON.parse(localStorage.getItem("productos"))
 }else{
-    lista=lista
+    lista = lista
 }
 
 function filtrarProductos(){
@@ -24,6 +24,7 @@ function filtrarProductos(){
     const  input = document.getElementById("filtrar").value
     const palabraClave = input.trim().toLowerCase()
     const resultado = lista.filter((producto)=>producto.nombre.toLowerCase().includes(palabraClave))
+
 
     if (resultado.length>0){
 
@@ -45,9 +46,11 @@ function filtrarProductos(){
         stock.textContent = `quedan en stock: ${producto.stock}`
         card.appendChild(stock)
 
+
         const imagen = document.createElement("img")
         imagen.src = producto.imagen
         card.appendChild(imagen)
+
 
         container.appendChild(card)
 
@@ -55,7 +58,7 @@ function filtrarProductos(){
         } )
         body.appendChild(container)
     }else{
-        alert("no se encotró el producto "+palabraClave)
+        Swal.fire("no se encotró el producto "+palabraClave)
     }
     localStorage.setItem("productos", JSON.stringify(lista))
 }
