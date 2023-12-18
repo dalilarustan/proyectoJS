@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 body{
+    margin:10px;
     background-color:#d1af99;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
