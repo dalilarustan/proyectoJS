@@ -24,7 +24,7 @@ function filtrarProductos(){
     const  input = document.getElementById("filtrar").value
     const palabraClave = input.trim().toLowerCase()
     const resultado = lista.filter((producto)=>producto.nombre.toLowerCase().includes(palabraClave))
-
+console.log(lista[0])
 
     if (resultado.length>0){
 
@@ -33,7 +33,7 @@ function filtrarProductos(){
 
         resultado.forEach((producto)=>{
             const card = document.createElement("div")
-
+console.log(producto)
         const nombre = document.createElement("h2")
         nombre.textContent = producto.nombre
         card.appendChild(nombre)
@@ -47,9 +47,10 @@ function filtrarProductos(){
         card.appendChild(stock)
 
 
-        const imagen = document.createElement("img")
-        imagen.src = producto.imagen
-        card.appendChild(imagen)
+        const imagen = document.createElement("img");
+        imagen.src = (producto.imagen);
+        console.log(producto)
+        card.appendChild(imagen);
 
 
         container.appendChild(card)
