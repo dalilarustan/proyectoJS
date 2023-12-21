@@ -19,49 +19,41 @@ if (localStorage.getItem("productos")){
     lista = lista
 }
 
-function filtrarProductos(){
-    const body = document.querySelector("body")
-    const  input = document.getElementById("filtrar").value
-    const palabraClave = input.trim().toLowerCase()
-    const resultado = lista.filter((producto)=>producto.nombre.toLowerCase().includes(palabraClave))
-console.log(lista[0])
+function filtrarProductos() {
+    const input = document.getElementById("filtrar").value;
+    const palabraClave = input.trim().toLowerCase();
+    const resultado = lista.filter((producto) => producto.nombre.toLowerCase().includes(palabraClave));
 
-    if (resultado.length>0){
+    const container = document.getElementById("productosFiltradosContainer");
+    container.innerHTML = '';
 
-        const container = document.createElement("div")
-        container.classList.add("container")
+    if (resultado.length > 0) {
+        resultado.forEach((producto) => {
+            const card = document.createElement("div");
 
-        resultado.forEach((producto)=>{
-            const card = document.createElement("div")
-console.log(producto)
-        const nombre = document.createElement("h2")
-        nombre.textContent = producto.nombre
-        card.appendChild(nombre)
+            const nombre = document.createElement("h2");
+            nombre.textContent = producto.nombre;
+            card.appendChild(nombre);
 
-        const precio = document.createElement("p")
-        precio.textContent = `tiene un valor de $ ${producto.precio}`
-        card.appendChild(precio)
+            const precio = document.createElement("p");
+            precio.textContent = `Tiene un valor de $ ${producto.precio}`;
+            card.appendChild(precio);
 
-        const stock = document.createElement("p")
-        stock.textContent = `quedan en stock: ${producto.stock}`
-        card.appendChild(stock)
+            const stock = document.createElement("p");
+            stock.textContent = `Quedan en stock: ${producto.stock}`;
+            card.appendChild(stock);
 
+            const imagen = document.createElement("img");
+            imagen.src = producto.imagen;
+            card.appendChild(imagen);
 
-        const imagen = document.createElement("img");
-        imagen.src = (producto.imagen);
-        console.log(producto)
-        card.appendChild(imagen);
-
-
-        container.appendChild(card)
-
-
-        } )
-        body.appendChild(container)
-    }else{
-        Swal.fire("no se encotró el producto "+palabraClave)
+            container.appendChild(card);
+        });
+    } else {
+        Swal.fire("No se encontró el producto " + palabraClave);
     }
-    localStorage.setItem("productos", JSON.stringify(lista))
+
+    localStorage.setItem("productos", JSON.stringify(lista));
 }
 
 

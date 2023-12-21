@@ -23,10 +23,8 @@ h1{
 }
 .container{
     background-color:#F0AA7F;
+    text-align: center;
 }
 img{
     max-width: 300px;
-}
-.carousel-item{
-    justify-content: center;
 }
