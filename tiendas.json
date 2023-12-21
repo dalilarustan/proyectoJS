@@ -1,0 +1,35 @@
+{
+    "tiendas":
+    [
+        {
+            "sucursal": "Palermo",
+            "dirección": "Agüero 48",
+            "teléfono": "011 5166-5800"   
+        },
+        {
+            "sucursal": "La Plata",
+            "dirección": "19 590",
+            "teléfono": "221 430-6289"
+        },
+        {
+            "sucursal":"Caballito",
+            "dirección":"Venezuela 2495",
+            "teléfono": "011 4308-6289"
+        },
+        {
+            "sucursal":"Microcentro",
+            "dirección":"Av del Libertador 750",
+            "teléfono":"011 4814-7410"
+        },
+        {
+            "sucursal":"Mendoza",
+            "dirección":"Salta 1244",
+            "teléfono":"0261 423-5138"
+        },
+        {
+            "sucursal":"Neuquén",
+            "dirección":"Rivadavia 354",
+            "teléfono":"0299 442-9292"
+        }
+    ]
+}

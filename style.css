@@ -24,3 +24,6 @@ h1{
 .container{
     background-color:#F0AA7F;
 }
+img{
+    max-width: 300px;
+}
