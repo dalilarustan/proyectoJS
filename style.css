@@ -27,3 +27,6 @@ h1{
 img{
     max-width: 300px;
 }
+.carousel-item{
+    align-items: center;
+}
